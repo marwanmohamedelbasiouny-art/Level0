@@ -29,7 +29,7 @@ header.image-header {
     height: 80vh; /* بياخد 80% من طول الشاشة */
     
     /* الخلفية - تأكد من مسار الصورة الصحيح */
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('../web L0/Pictures/6448a687-5fda-449c-9317-c03a4ab8d574.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('Pictures/6448a687-5fda-449c-9317-c03a4ab8d574.jpg');
     background-size: cover;      /* يفرش الصورة بالكامل */
     background-position: center;  /* يسنتر الصورة */
     background-repeat: no-repeat;
