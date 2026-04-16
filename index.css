@@ -154,3 +154,41 @@ header.image-header {
         height: 200px;
     }
 }
+
+/* تنسيق الصندوق بتاع السعر */
+.price-box {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center; /* عشان السعر ييجي في النص */
+    align-items: center;
+    gap: 12px; /* المسافة بين السعر القديم والجديد */
+}
+
+/* تنسيق السعر القديم */
+.old-price {
+    position: relative;
+    display: inline-block;
+    color: #888; /* لون رمادي باهت */
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* الشرطة الحمرا الدياجونال (المايلة) */
+.old-price::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    width: 110%;
+    height: 3px; /* سمك الخط الأحمر */
+    background-color: #ff0000; /* أحمر صريح */
+    transform: rotate(-15deg); /* درجة الميلان */
+    border-radius: 2px;
+}
+
+/* تنسيق السعر الجديد */
+.new-price {
+    color: #ffffff; /* لون أبيض عشان ينور في الدارك مود */
+    font-size: 1.5rem;
+    font-weight: 900;
+}
