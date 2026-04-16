@@ -1,0 +1,156 @@
+/* 1. Global Reset - تصفير الإعدادات لضمان عدم وجود فراغات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #161616;
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+    --wa-green: #25d366;
+    --accent-line: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. Header Section - الصورة الخلفية كاملة العرض */
+header.image-header {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* بياخد 80% من طول الشاشة */
+    
+    /* الخلفية - تأكد من مسار الصورة الصحيح */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('../web L0/Pictures/6448a687-5fda-449c-9317-c03a4ab8d574.jpg');
+    background-size: cover;      /* يفرش الصورة بالكامل */
+    background-position: center;  /* يسنتر الصورة */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* تأثير Parallax رائع للكمبيوتر */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--accent-line);
+}
+
+.content {
+    text-align: center;
+    z-index: 2;
+}
+
+.logo {
+    width: 220px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+/* 3. Skills Grid - شبكة المربعات */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* 4. Skill Card - المربعات */
+.skill-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--accent-line);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-15px);
+    border-color: #555;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.skill-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s ease;
+    filter: grayscale(20%);
+}
+
+.skill-card:hover .skill-image img {
+    filter: grayscale(0%);
+}
+
+.skill-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.skill-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+.skill-info p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* 5. WhatsApp Button - الزرار */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: var(--wa-green);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* 6. Responsive Design - تعديلات الموبايل */
+@media (max-width: 768px) {
+    header.image-header {
+        height: 55vh; /* تقليل الطول للموبايل */
+        background-attachment: scroll; /* قفل البارالاكس لسلاسة الحركة */
+    }
+
+    .logo {
+        width: 160px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* مربع واحد في الصف */
+        margin: 30px auto;
+        gap: 20px;
+    }
+
+    .skill-image img {
+        height: 200px;
+    }
+}
